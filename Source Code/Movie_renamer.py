@@ -46,7 +46,7 @@ def clean_rename(path):
         for i in range(len(org_names_list)):
             if os.path.exists(path+"\\"+org_names_list[i]):
                 os.rename(path+"\\"+org_names_list[i], path+"\\"+cleaned_list[i])
-        print("\n --- Rename Completed ---")
+        print("\n --- Rename Completed ---\n")
     else:
         response5 = messagebox.askquestion("Question", "Do you want to start from begining?")
         if response5 == "yes":
@@ -75,7 +75,7 @@ def movie_rename(path):
         for i in range(len(org_names_list)):
             if os.path.exists(path+"\\"+org_names_list[i]):
                 os.rename(path+"\\"+org_names_list[i], path+"\\"+movie_rename_list[i]+os.path.splitext(org_names_list[i])[1])
-        print("\n --- Rename Completed ---")
+        print("\n --- Rename Completed ---\n")
     else:
         response7 = messagebox.askquestion("Question", "Do you want to start from begining?")
         if response7 == "yes":
@@ -102,7 +102,7 @@ def user_sequence(path):
             for i in range(len(org_names_list)):
                 if os.path.exists(path+"\\"+org_names_list[i]):
                     os.rename(path+"\\"+org_names_list[i], path+"\\"+sub_list[i])
-            print("\n --- Rename Completed ---")
+            print("\n --- Rename Completed ---\n")
         else:
             response10 = messagebox.askquestion("Question", "Do you want to try again?")
             if response10 == "yes":
@@ -128,7 +128,7 @@ def user_sequence(path):
             for i in range(len(org_names_list)):
                 if os.path.exists(path+"\\"+org_names_list[i]):
                     os.rename(path+"\\"+org_names_list[i], path+"\\"+search_list[i])
-            print("\n --- Rename Completed ---")
+            print("\n --- Rename Completed ---\n")
         else:
             response14 = messagebox.askquestion("Question", "Do you want to try again?")
             if response14 == "yes":
@@ -151,7 +151,7 @@ def user_sequence(path):
             for i in range(len(org_names_list)):
                 if os.path.exists(path+"\\"+org_names_list[i]):
                     os.rename(path+"\\"+org_names_list[i], path+"\\"+replace_list[i])
-            print("\n --- Rename Completed ---")
+            print("\n --- Rename Completed ---\n")
         else:
             response12 = messagebox.askquestion("Question", "Do you want to try again?")
             if response12 == "yes":
@@ -189,5 +189,6 @@ def main():
 
     print("\n Select an option for continue....\n 1. Movie Rename\n 2. Clean Name\n 3. Customize\n 4. Exit")
     rename_options(direct)
+    os.system("pause")
 
 main()
