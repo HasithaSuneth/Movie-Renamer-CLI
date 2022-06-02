@@ -34,7 +34,7 @@ Remove unnecessary parts from movie/file names and rename the files to a proper 
 </p>
 
 ## IMPORTANT
-This process will remove the extension of the files (Ex: .mkv .mp4), so use this only on Folders/Directories. (This issue will be patched soon.)
+Removing symbols from the file name during the clean process are; <b>< -.,():_#[]$@%=+^ ></b>
 
 ## Technical Details
 - Support operating systems (Tested) - Windows
