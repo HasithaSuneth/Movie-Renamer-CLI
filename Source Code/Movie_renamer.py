@@ -74,7 +74,14 @@ def movie_rename(path):
     if response6 == "yes":
         for i in range(len(org_names_list)):
             if os.path.exists(path+"\\"+org_names_list[i]):
-                os.rename(path+"\\"+org_names_list[i], path+"\\"+movie_rename_list[i]+os.path.splitext(org_names_list[i])[1])
+                if org_names_list[i].endswith(('.mp4', '.avi', '.mkv', '.mov', '.wmv', '.flv', '.webm', '.avchd', '.m4v')):
+                    try:
+                        extension_removed = movie_rename_list[i].replace(" " + movie_rename_list[i].split(" ")[-1], "")
+                        os.rename(path+"\\"+org_names_list[i], path+"\\"+extension_removed+os.path.splitext(org_names_list[i])[1])
+                    except:
+                        os.rename(path+"\\"+org_names_list[i], path+"\\"+movie_rename_list[i]+os.path.splitext(org_names_list[i])[1])
+                else:
+                    os.rename(path+"\\"+org_names_list[i], path+"\\"+movie_rename_list[i])
         print("\n --- Rename Completed ---\n")
     else:
         response7 = messagebox.askquestion("Question", "Do you want to start from begining?")
